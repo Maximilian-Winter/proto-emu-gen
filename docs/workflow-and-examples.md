@@ -103,7 +103,7 @@ That is how the repository examples are structured.
 
 File:
 
-- [`examples/fibonacci.py`](/H:/Dev42/proto-emu-gen/examples/fibonacci.py)
+- [`examples/fibonacci.py`](../examples/fibonacci.py)
 
 What it teaches:
 
@@ -120,7 +120,7 @@ Use it when:
 
 File:
 
-- [`examples/tinyboy.py`](/H:/Dev42/proto-emu-gen/examples/tinyboy.py)
+- [`examples/tinyboy.py`](../examples/tinyboy.py)
 
 What it teaches:
 
@@ -139,7 +139,7 @@ Use it when:
 
 File:
 
-- [`examples/tinysuper.py`](/H:/Dev42/proto-emu-gen/examples/tinysuper.py)
+- [`examples/tinysuper.py`](../examples/tinysuper.py)
 
 What it teaches:
 
@@ -157,7 +157,7 @@ Use it when:
 
 File:
 
-- [`examples/cycle_accurate.py`](/H:/Dev42/proto-emu-gen/examples/cycle_accurate.py)
+- [`examples/cycle_accurate.py`](../examples/cycle_accurate.py)
 
 What it teaches:
 
@@ -174,8 +174,8 @@ Use it when:
 
 Files:
 
-- [`examples/game_boy/game_boy.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy.py)
-- [`examples/game_boy/game_boy_host.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy_host.py)
+- [`examples/game_boy/game_boy.py`](../examples/game_boy/game_boy.py)
+- [`examples/game_boy/game_boy_host.py`](../examples/game_boy/game_boy_host.py)
 
 What they teach:
 
@@ -254,7 +254,7 @@ The generated file is long but regular. A good reading order is:
 5. CPU step function,
 6. board init and board step.
 
-That mirrors the code generator organization in [`src/proto/codegen.py`](/H:/Dev42/proto-emu-gen/src/proto/codegen.py).
+That mirrors the code generator organization in [`src/proto/codegen.py`](../src/proto/codegen.py).
 
 ## Common pitfalls
 
@@ -269,13 +269,14 @@ That mirrors the code generator organization in [`src/proto/codegen.py`](/H:/Dev
 
 For modeling patterns:
 
-- [`examples`](/H:/Dev42/proto-emu-gen/examples)
+- [`examples`](../examples)
 
 For exact behavior:
 
-- [`tests`](/H:/Dev42/proto-emu-gen/tests)
+- [`tests`](../tests)
 
 For generator implementation details:
 
-- [`src/proto/codegen.py`](/H:/Dev42/proto-emu-gen/src/proto/codegen.py)
-- [`src/proto/transpiler.py`](/H:/Dev42/proto-emu-gen/src/proto/transpiler.py)
+- [`src/proto/codegen.py`](../src/proto/codegen.py)
+- [`src/proto/transpiler.py`](../src/proto/transpiler.py)
+

@@ -44,14 +44,14 @@ Based on the code and tests in this repository, the framework currently supports
 
 ## Repository tour
 
-- [`src/proto`](/H:/Dev42/proto-emu-gen/src/proto) - framework runtime and code generators
-- [`examples/fibonacci.py`](/H:/Dev42/proto-emu-gen/examples/fibonacci.py) - smallest end-to-end example
-- [`examples/tinyboy.py`](/H:/Dev42/proto-emu-gen/examples/tinyboy.py) - single CPU, banked ROM, timer, signals
-- [`examples/tinysuper.py`](/H:/Dev42/proto-emu-gen/examples/tinysuper.py) - dual CPU, separate buses, ports
-- [`examples/cycle_accurate.py`](/H:/Dev42/proto-emu-gen/examples/cycle_accurate.py) - access-timed generation
-- [`examples/game_boy/game_boy.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy.py) - large real-world system definition
-- [`examples/game_boy/game_boy_host.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy_host.py) - SDL3 host generation
-- [`tests`](/H:/Dev42/proto-emu-gen/tests) - feature coverage and behavior reference
+- [`src/proto`](src/proto) - framework runtime and code generators
+- [`examples/fibonacci.py`](examples/fibonacci.py) - smallest end-to-end example
+- [`examples/tinyboy.py`](examples/tinyboy.py) - single CPU, banked ROM, timer, signals
+- [`examples/tinysuper.py`](examples/tinysuper.py) - dual CPU, separate buses, ports
+- [`examples/cycle_accurate.py`](examples/cycle_accurate.py) - access-timed generation
+- [`examples/game_boy/game_boy.py`](examples/game_boy/game_boy.py) - large real-world system definition
+- [`examples/game_boy/game_boy_host.py`](examples/game_boy/game_boy_host.py) - SDL3 host generation
+- [`tests`](tests) - feature coverage and behavior reference
 
 ## Installation
 
@@ -140,7 +140,7 @@ Then compile the generated C:
 gcc -O2 -o tinydemo tinydemo.c
 ```
 
-For a full runnable example with a generated `main()`, start with [`examples/fibonacci.py`](/H:/Dev42/proto-emu-gen/examples/fibonacci.py).
+For a full runnable example with a generated `main()`, start with [`examples/fibonacci.py`](examples/fibonacci.py).
 
 ## How Python becomes C
 
@@ -164,18 +164,18 @@ Examples of supported conveniences:
 - array declarations such as `buf: array[uint8, 160] = None`
 - opcode families with variant substitution such as `cpu.reg = cpu.reg | 1`
 
-More detail is in [`docs/transpiler-subset.md`](/H:/Dev42/proto-emu-gen/docs/transpiler-subset.md).
+More detail is in [`docs/transpiler-subset.md`](docs/transpiler-subset.md).
 
 ## Recommended learning path
 
 Read the examples in this order:
 
-1. [`examples/fibonacci.py`](/H:/Dev42/proto-emu-gen/examples/fibonacci.py)
-2. [`examples/tinyboy.py`](/H:/Dev42/proto-emu-gen/examples/tinyboy.py)
-3. [`examples/tinysuper.py`](/H:/Dev42/proto-emu-gen/examples/tinysuper.py)
-4. [`examples/cycle_accurate.py`](/H:/Dev42/proto-emu-gen/examples/cycle_accurate.py)
-5. [`examples/game_boy/game_boy.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy.py)
-6. [`examples/game_boy/game_boy_host.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy_host.py)
+1. [`examples/fibonacci.py`](examples/fibonacci.py)
+2. [`examples/tinyboy.py`](examples/tinyboy.py)
+3. [`examples/tinysuper.py`](examples/tinysuper.py)
+4. [`examples/cycle_accurate.py`](examples/cycle_accurate.py)
+5. [`examples/game_boy/game_boy.py`](examples/game_boy/game_boy.py)
+6. [`examples/game_boy/game_boy_host.py`](examples/game_boy/game_boy_host.py)
 
 That progression mirrors the framework itself:
 
@@ -199,7 +199,7 @@ Typical project flow:
 7. Optionally wrap it with `SDLHost` and `HostCodeGenerator`.
 8. Compile the emitted C with your platform toolchain.
 
-See [`docs/workflow-and-examples.md`](/H:/Dev42/proto-emu-gen/docs/workflow-and-examples.md) for a more detailed walk-through.
+See [`docs/workflow-and-examples.md`](docs/workflow-and-examples.md) for a more detailed walk-through.
 
 ## Raw C escape hatches
 
@@ -227,7 +227,7 @@ There are two timing styles:
 - Normal mode: opcode entries contribute `cycles` directly to `cycle_count`, and board step logic catches peripherals up afterward.
 - Cycle-accurate mode: bus accesses and `internal_op()` calls account for timing, and synchronization happens during execution rather than after the opcode finishes.
 
-If you care about memory wait states, peripheral synchronization on every access, or DMA arbitration, read [`examples/cycle_accurate.py`](/H:/Dev42/proto-emu-gen/examples/cycle_accurate.py) alongside [`docs/model-and-architecture.md`](/H:/Dev42/proto-emu-gen/docs/model-and-architecture.md).
+If you care about memory wait states, peripheral synchronization on every access, or DMA arbitration, read [`examples/cycle_accurate.py`](examples/cycle_accurate.py) alongside [`docs/model-and-architecture.md`](docs/model-and-architecture.md).
 
 ## SDL host generation
 
@@ -241,7 +241,7 @@ The host layer lets you keep emulator logic in the generated board while declari
 - menu bar and config,
 - render/audio/input hook binding.
 
-See [`docs/host-layer.md`](/H:/Dev42/proto-emu-gen/docs/host-layer.md).
+See [`docs/host-layer.md`](docs/host-layer.md).
 
 ## Limitations and caveats
 
@@ -251,16 +251,17 @@ This project is already useful, but it is still early-stage and opinionated.
 - Handler functions should stay simple and side-effect oriented.
 - When you need something outside the subset, use raw C hooks.
 - Generated output is monolithic C rather than a multi-file project structure.
-- The best source of truth for supported patterns today is the combination of [`tests/test_transpiler.py`](/H:/Dev42/proto-emu-gen/tests/test_transpiler.py) and the example systems.
+- The best source of truth for supported patterns today is the combination of [`tests/test_transpiler.py`](tests/test_transpiler.py) and the example systems.
 - The data model exposes `Chip.set_init()`, but board initialization is currently driven by field defaults plus generated `main()` or host setup code; chip init handlers are not presently wired into emitted board init code.
 
 ## Documentation
 
-- [`docs/model-and-architecture.md`](/H:/Dev42/proto-emu-gen/docs/model-and-architecture.md)
-- [`docs/transpiler-subset.md`](/H:/Dev42/proto-emu-gen/docs/transpiler-subset.md)
-- [`docs/workflow-and-examples.md`](/H:/Dev42/proto-emu-gen/docs/workflow-and-examples.md)
-- [`docs/host-layer.md`](/H:/Dev42/proto-emu-gen/docs/host-layer.md)
+- [`docs/model-and-architecture.md`](docs/model-and-architecture.md)
+- [`docs/transpiler-subset.md`](docs/transpiler-subset.md)
+- [`docs/workflow-and-examples.md`](docs/workflow-and-examples.md)
+- [`docs/host-layer.md`](docs/host-layer.md)
 
 ## Status
 
 The package metadata marks the project as alpha, which matches the repository well: the foundation is already broad, the examples are ambitious, and the tests cover a lot of behavior, but the API and supported subset are still evolving.
+

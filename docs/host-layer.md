@@ -45,7 +45,7 @@ host.bind_input("poll_input")
 code = HostCodeGenerator(host).generate()
 ```
 
-The canonical repository example is [`examples/game_boy/game_boy_host.py`](/H:/Dev42/proto-emu-gen/examples/game_boy/game_boy_host.py).
+The canonical repository example is [`examples/game_boy/game_boy_host.py`](../examples/game_boy/game_boy_host.py).
 
 ## What HostCodeGenerator emits
 
@@ -237,3 +237,4 @@ The host layer works best when:
 If you are just validating the board generator, start without the host layer and use a small handwritten `main()`.
 
 If you are building an interactive emulator application, move to `SDLHost` once the core is stable enough to run frames.
+

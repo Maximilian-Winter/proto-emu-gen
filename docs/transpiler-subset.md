@@ -345,8 +345,9 @@ If you need one of these, use raw C for that handler.
 
 The most complete behavior reference for the transpiler today is:
 
-- [`tests/test_transpiler.py`](/H:/Dev42/proto-emu-gen/tests/test_transpiler.py)
-- [`tests/test_tier2_cycle_accurate.py`](/H:/Dev42/proto-emu-gen/tests/test_tier2_cycle_accurate.py)
-- [`tests/test_tier3.py`](/H:/Dev42/proto-emu-gen/tests/test_tier3.py)
+- [`tests/test_transpiler.py`](../tests/test_transpiler.py)
+- [`tests/test_tier2_cycle_accurate.py`](../tests/test_tier2_cycle_accurate.py)
+- [`tests/test_tier3.py`](../tests/test_tier3.py)
 
 When in doubt, copy a pattern from those tests or from the working examples.
+

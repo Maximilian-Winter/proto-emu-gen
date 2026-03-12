@@ -50,7 +50,7 @@ Key behaviors:
 - `master_divider` lets the generator scale between derived clocks,
 - `cycles_per()` is useful at modeling time for reasoning about ratios.
 
-The multi-CPU example in [`examples/tinysuper.py`](/H:/Dev42/proto-emu-gen/examples/tinysuper.py) is a good reference.
+The multi-CPU example in [`examples/tinysuper.py`](../examples/tinysuper.py) is a good reference.
 
 ## CPUDefinition
 
@@ -315,3 +315,4 @@ A practical pattern in this framework is:
 - drop to raw C only for edge cases or performance-sensitive special handling.
 
 That hybrid approach is visible throughout the examples and is part of the design, not a workaround.
+
