@@ -1,0 +1,79 @@
+[build-system]
+requires = [  "setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proto-gen"
+version = "0.1.0"
+description = "A declarative Python framework for generating C code for emulators"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+keywords = [
+    "emulator",
+    "code-generation",
+    "c",
+    "transpiler",
+    "retrogaming",
+    "gameboy",
+    "nes",
+    "snes",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Compilers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: C",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+
+[[project.authors]]
+name = "Maximilian Winter"
+email = "maximilian.winter.91@gmail.com"
+
+
+[project.urls]
+Homepage = "https://github.com/Maximilian-Winter/proto-gen-hdl"
+"Bug Tracker" = "https://github.com/Maximilian-Winter/proto-gen-hdl/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true

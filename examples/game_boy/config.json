@@ -1,0 +1,14 @@
+{
+  "vsync": true,
+  "volume": 60,
+  "key_bindings": {
+    "D-Pad Right": 7,
+    "D-Pad Left": 4,
+    "D-Pad Up": 26,
+    "D-Pad Down": 22,
+    "A Button": 20,
+    "B Button": 8,
+    "Select": 42,
+    "Start": 40
+  }
+}

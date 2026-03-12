@@ -1,0 +1,8 @@
+/src/proto_gen.egg-info/
+/src/proto/__pycache__
+/tests/__pycache__
+/examples/__pycache__
+/examples/game_boy/SDL3-3.4.0
+/examples/game_boy/SDL3-3.4.0
+/examples/game_boy/SDL3-3.4.0
+/examples/extern/
